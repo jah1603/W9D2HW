@@ -1,0 +1,20 @@
+<h1>Edit engineer</h1>
+
+<form action="/engineers/$foundEngineer.getId()" method="post">
+    <label for="engineer-firstname">First name</label>
+    <input type="text" value = $foundEngineer.getFirstName() id="engineer-firstname" name="engineer-firstname" required="true">
+
+    <label for="engineer-lastname">Last name</label>
+    <input type="text" value = "$foundEngineer.getLastName()" id="engineer-lastname" name="engineer-lastname" required = "true">
+
+    <label for="engineer-salary">Salary</label>
+    <input type="text" value = "$foundEngineer.getSalary()" id="engineer-salary" name="engineer-salary" required="true">
+
+    <label for="department">Department</label>
+    <select name="department" id="department">
+        #foreach ( $department in $departments )
+        <option value="$department.getId()">$department.getTitle()</option>
+        #end
+    </select>
+    <input type="submit" value="Save">
+</form>

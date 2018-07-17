@@ -1,0 +1,20 @@
+<h1>New engineer</h1>
+
+<form action="/engineers" method="post">
+    <label for="engineer-firstname">First name</label>
+    <input type="text" id="engineer-firstname" name="engineer-firstname" required="true">
+
+    <label for="engineer-lastname">Last name</label>
+    <input type="text" id="engineer-lastname" name="engineer-lastname" required = "true">
+
+    <label for="engineer-salary">Salary</label>
+    <input type="text" id="engineer-salary" name="engineer-salary" required="true">
+
+    <label for="department">Department</label>
+    <select name="department" id="department">
+        #foreach ( $department in $departments )
+        <option value="$department.getId()">$department.getTitle()</option>
+        #end
+    </select>
+    <input type="submit" value="Save">
+</form>

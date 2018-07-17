@@ -1,0 +1,23 @@
+<h1>Edit manager</h1>
+
+<form action="/managers/$foundManager.getId()" method="post">
+    <label for="manager-firstname">First name</label>
+    <input type="text" value = $foundManager.getFirstName() id="manager-firstname" name="manager-firstname" required="true">
+
+    <label for="manager-lastname">Last name</label>
+    <input type="text" value = "$foundManager.getLastName()" id="manager-lastname" name="manager-lastname" required = "true">
+
+    <label for="manager-salary">Salary</label>
+    <input type="text" value = "$foundManager.getSalary()" id="manager-salary" name="manager-salary" required="true">
+
+    <label for="manager-budget">Budget</label>
+    <input type="text" value = "$foundManager.getBudget()" id="manager-budget" name="manager-budget" required>
+
+    <label for="department">Department</label>
+    <select name="department" id="department">
+        #foreach ( $department in $departments )
+        <option value="$department.getId()">$department.getTitle()</option>
+        #end
+    </select>
+    <input type="submit" value="Save">
+</form>

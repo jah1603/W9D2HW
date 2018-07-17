@@ -1,0 +1,18 @@
+<p class="pageHeader"> All employees</p>
+
+<div>
+    <table>
+        <tr>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Department</th>
+        </tr>
+        #foreach($employee in $employees)
+        <tr>
+            <td>$employee.getFirstName()</td>
+            <td>$employee.getLastName()</td>
+            <td>$employee.getDepartment().getTitle()</td>
+        </tr>
+        #end
+    </table>
+</div>
